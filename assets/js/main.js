@@ -1,6 +1,10 @@
 //https://en.wikipedia.org/wiki/Payment_card_number
 
-// Сначала алгоритм Луна, потом фильтруем по длине array,  потом проверка по вендорам.
+
+let card = '3537791645445008';
+//2720990734838177
+
+const arrlength = [13, 14, 15, 16, 17, 18, 19]
 
 function cardcheck(){
 
@@ -19,6 +23,7 @@ function cardcheck(){
   let isCorrect = sum % 10 == 0;
   
   console.log(`Is Correct:`, isCorrect);
+}
 
 
   let card = document.getElementById('xvar').value.split("")
@@ -36,20 +41,34 @@ function cardcheck(){
    
     
      var x = document.getElementById("xvar").value;
+
+  if(amex.test(x))
+        {
+            window.alert(`${x} is a valid American Express number`);
+            
+        }
+     else if (visa.test (x)) 
+        {
+            window.alert(`${x} is a valid Visa number`);
+        }
+
+        else 
+        { 
+            window.alert(" uknown card number.");
+         } 
+
     if(amex.test(x))
         {
             window.alert(`${x} is a valid American Express number`);
             
         }
- else{ window.alert("Invalid Aadhar no.");
+ else { window.alert("Invalid Aadhar no.");
        }
-      } 
+      
 
 
 
 
-/*let card = '3537791645445008';
-//2720990734838177
 
 
 
